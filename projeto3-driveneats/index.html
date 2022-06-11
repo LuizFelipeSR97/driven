@@ -13,77 +13,105 @@
         <h2>Sua comida em 6 minutos</h2>
     </div>
     <div class="conteudo">
-        <div class="pedido">
+        <div class="pedido prato">
             <h1>Primeiro, seu prato</h1>
             <div class="lista">
-                <div class="opcao">
+                <div class="opcao" onclick="EscolherPrato(this)">
                     <img src="projeto3-driveneats/img/miojo.jpg"/>
-                    <h1>Miojo gourmet</h1>
-                    <h2>O prato nº 1 de quem mora sozinho</h2>
+                    <h1 class="escolha1">Miojo gourmet</h1>
+                    <h2>Classico miojo com recheio de calabresa e cebola</h2>
                     <h3>R$18,90</h3>
                 </div>
-                <div class="opcao">
+                <div class="opcao" onclick="EscolherPrato(this)">
                     <img src="projeto3-driveneats/img/contra-file.jpg"/>
-                    <h1>Contra-file</h1>
-                    <h2>Aquele prato que é gostoso e saudavel</h2>
+                    <h1 class="escolha1">Contra-file</h1>
+                    <h2>150g de contra-file acompanhado de arroz branco, farofa e salada</h2>
                     <h3>R$32,90</h3>
                 </div>
-                <div class="opcao">
-                    <h1>Nome prato 3</h1>
-                    <h2>Descricao prato 3</h2>
-                    <h3>Preco prato 3</h3>
+                <div class="opcao" onclick="EscolherPrato(this)">
+                    <img src="projeto3-driveneats/img/frango-assado.jpg" width="50px" height="50px"/>
+                    <h1 class="escolha1">Frango divino</h1>
+                    <h2>Pedaço de frango assado acompanhado de batata frita e salada</h2>
+                    <h3>R$22,90</h3>
                 </div>           
             </div>
         </div>
-        <div class="pedido">
+        <div class="pedido bebida">
             <h1>Agora, sua bebida</h1>
             <div class="lista">
-                <div class="opcao">
-                    <img src="projeto3-driveneats/img/miojo.jpg"/>
-                    <h1>Miojo gourmet</h1>
-                    <h2>O prato nº 1 de quem mora sozinho</h2>
-                    <h3>R$18,90</h3>
+                <div class="opcao" onclick="EscolherBebida(this)">
+                    <img src="projeto3-driveneats/img/refri.jpg"/>
+                    <h1 class="escolha2">Refrigerante</h1>
+                    <h2>Lata de refrigerante: Coca, Guarana ou Pepsi</h2>
+                    <h3>R$3,90</h3>
                 </div>
-                <div class="opcao">
-                    <img src="projeto3-driveneats/img/contra-file.jpg"/>
-                    <h1>Contra-file</h1>
-                    <h2>Aquele prato que é gostoso e saudavel</h2>
-                    <h3>R$32,90</h3>
+                <div class="opcao" onclick="EscolherBebida(this)">
+                    <img src="projeto3-driveneats/img/suco.jpg"/>
+                    <h1 class="escolha2">Suco natural</h1>
+                    <h2>Sabores: laranja, morango, uva e limão</h2>
+                    <h3>R$6,90</h3>
                 </div>
-                <div class="opcao">
-                    <h1>Nome prato 3</h1>
-                    <h2>Descricao prato 3</h2>
-                    <h3>Preco prato 3</h3>
-                </div>           
+                <div class="opcao" onclick="EscolherBebida(this)">
+                    <img src="projeto3-driveneats/img/cerveja.jpg"/>
+                    <h1 class="escolha2">Cerveja</h1>
+                    <h2>Uma cervejinha pra refrescar</h2>
+                    <h3>R$4,90</h3>
+                </div>         
             </div>
         </div>
-        <div class="pedido">
+        <div class="pedido sobremesa">
             <h1>Por fim, sua sobremesa</h1>
             <div class="lista">
-                <div class="opcao">
-                    <img src="projeto3-driveneats/img/miojo.jpg"/>
-                    <h1>Miojo gourmet</h1>
-                    <h2>O prato nº 1 de quem mora sozinho</h2>
-                    <h3>R$18,90</h3>
+                <div class="opcao" onclick="EscolherSobremesa(this)" >
+                    <img src="projeto3-driveneats/img/salada-de-frutas.jpg"/>
+                    <h1 class="escolha3">Salada de frutas</h1>
+                    <h2>Um mix de frutas para manter o equilibrio após a refeiçao</h2>
+                    <h3>R$4,50</h3>
                 </div>
-                <div class="opcao">
-                    <img src="projeto3-driveneats/img/contra-file.jpg"/>
-                    <h1>Contra-file</h1>
-                    <h2>Aquele prato que é gostoso e saudavel</h2>
-                    <h3>R$32,90</h3>
+                <div class="opcao" onclick="EscolherSobremesa(this)">
+                    <img src="projeto3-driveneats/img/brigadeiro.jpg"/>
+                    <h1 class="escolha3">Brigadeiro</h1>
+                    <h2>O docinho queridinho do brasileiro</h2>
+                    <h3>R$2,50</h3>
                 </div>
-                <div class="opcao">
-                    <h1>Nome prato 3</h1>
-                    <h2>Descricao prato 3</h2>
-                    <h3>Preco prato 3</h3>
+                <div class="opcao" onclick="EscolherSobremesa(this)">
+                    <img src="projeto3-driveneats/img/pudim.jpg"/>
+                    <h1 class="escolha3">Pudim</h1>
+                    <h2>Uma fatia deliciosa de pudim de leite condensado</h2>
+                    <h3>R$5,90</h3>
                 </div>           
             </div>
         </div>
     </div>
     <div class="menu-base">
-        <div class="botao-pedir">
+        <div class="botao-pedir" onclick="prosseguir()">
             <h1>Selecione os 3 itens para fechar o pedido</h1>
         </div>
     </div>
+    <div class="tela-final ocultar">
+        <div class="confirmacao-pedido">
+            <h1>Confirme seu pedido</h1>
+                <div class="escolhas-confirmacao">
+                    <span><h2 class="prato">Prato</h2></span>
+                    <span><h2 class="preco_prato">Preco do prato</h2></span>
+                </div>
+                <div class="escolhas-confirmacao">
+                    <span><h2 class="bebida">Bebida</h2></span>
+                    <span><h2 class="preco_bebida">Preco da bebida</h2></span>
+                </div>
+                <div class="escolhas-confirmacao">
+                    <span><h2 class="sobremesa">Sobremesa</h2></span>
+                    <span><h2 class="preco_sobremesa">Preco da sobremesa</h2></span>
+                </div>
+                <div class="escolhas-confirmacao">
+                    <span><h3 class="total">TOTAL</h3></span>
+                    <span><h3 class="preco_total">Preco total</h3></span>
+                </div>
+            <div class="botao" onclick="pedir()">Tudo certo, pode pedir!</div>
+            <h1 onclick="cancelar()">Cancelar</h1>
+        </div>
+    </div>
+    <script src="projeto3-driveneats/scripts.js">
+    </script>
   </body>
 </html>
