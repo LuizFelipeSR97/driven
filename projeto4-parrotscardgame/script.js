@@ -1,4 +1,5 @@
 let ncartas, i;
+let j=0;
 
 function iniciar(){
 
@@ -17,5 +18,31 @@ function iniciar(){
     }
 
 }
-
 iniciar()
+
+function clicar(elemento){
+
+    if ("elemento selecionado não tem a classe certo"){
+        if ("elemento selecionado não tem a classe selecionado")
+            if (j==0){
+                elemento.classList.add("selecionar")
+                j=1
+            } else {
+                if("duas cartas sao iguais"){
+                    target=document.querySelector("selecionar")
+                    target.classList.add("certo")
+                    target.classList.remove("selecionar")
+                    target=document.querySelector("selecionar")
+                    target.classList.add("certo")
+                    target.classList.remove("selecionar")
+                } else {
+                    target=document.querySelector("selecionar")
+                    target.classList.remove("selecionar")
+                    target=document.querySelector("selecionar")
+                    target.classList.remove("selecionar")
+                }
+                j=0
+            }
+        }
+    } 
+}
