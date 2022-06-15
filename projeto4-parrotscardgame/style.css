@@ -28,6 +28,10 @@ img{
     
 }
 
+.selecionar{
+    background-color: brown;
+}
+
 .tabuleiro{
     width: 1200px;
     display: flex;
@@ -47,8 +51,36 @@ img{
     align-items: center;
 }
 
-.esconder{
-    display: none;
+.c0, .cc0{
+    background-color: red;
+}
+
+.c1, .cc1{
+    background-color: blue;
+}
+
+.c2, .cc2{
+    background-color: yellow;
+}
+
+.c3, .cc3{
+    background-color: white;
+}
+
+.c4, .cc4{
+    background-color: black;
+}
+
+.c5, .cc5{
+    background-color: gray;
+}
+
+.c6, .cc6{
+    background-color: pink;
+}
+
+.certo{
+    background-color: gold;
 }
 
 @media (max-width: 1500px){
@@ -65,4 +97,8 @@ img{
     font-size: 36px;
 }
 
+}
+
+.esconder{
+    display: none;
 }
