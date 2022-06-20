@@ -3,11 +3,12 @@
 //Descobrir porque nos numeros pares de acertos uma das cartas segue com a classe 'selecionar'?
 //Falta mudar pras imagens do verso + efeito quando clica na carta
 
-let ncartas, i, k, e1, e2, carta1, carta2, contador, jogadas;
+let ncartas, i, k, e1, e2, carta1, carta2, contador, jogadas, cont;
 let j=0;
 let array=[];
 let intervalo=[];
 let idInterval=undefined;
+let tempo=0;
 
 function iniciar(){
 
@@ -208,6 +209,12 @@ function fim_de_jogo(){
         if (contador === 0) {
           clearInterval(idInterval)
           alert(`Você ganhou em ${jogadas} jogadas!`)
+          let resp=prompt("Deseja jogar novamente?")
+          while (resp!="sim"&&resp!="não"){
+            resp=prompt("Por favor, responda 'sim' ou 'não'. Deseja jogar novamente?")
+          }
+          if (resp=="sim"){
+            location.reload()
+          }
         }
 }
-

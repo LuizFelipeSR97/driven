@@ -70,3 +70,25 @@ img{
 .esconder{
     display: none;
 }
+
+.c0,.c1,.c2,.c3,.c4,.c5,.c6:hover{
+    cursor: pointer;
+}
+
+.relogio{
+    background-color: gray;
+    color: lightgray;
+    position:fixed;
+    top: 50px;
+    right: 0;
+    height: 50px;
+    padding: 0 10px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.esconder_relogio{
+    display: none;
+}
