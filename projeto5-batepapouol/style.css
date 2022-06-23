@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.telaEntrada{
+    z-index: 2;
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.telaEntrada img{
+    margin: 75px 0;
+}
+
+.telaEntrada input{
+    height: 50px;
+    width: 250px;
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.telaEntrada input:focus{
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+}
+
+.telaEntrada .botaoEntrar{
+    margin-top: 30px;
+    padding: 15px;
+    font-size: 18px;
+    width: 100px;
+    background-color: #E7E7E7;
+    border-radius: 9px; 
+    display: flex;
+    justify-content: center;
+}
+
+.telaEntrada .botaoEntrar:hover{
+    cursor: pointer;
+}
+
+.mensagemErroNomeUsuario{
+    margin-top: 30px;
+    color: red;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Tela Lateral*/
+
+.telaLateral{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    z-index: 1
+}
+
+.menuLateral{
+    background-color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 260px;
+    padding: 25px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menuLateral .paraQuem{
+    width: 100%;
+    padding: 25px 0 25px 0;
+}
+
+.paraQuem .pessoa{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.paraQuem .pessoa:hover {
+    cursor: pointer;
+}
+
+.paraQuem .pessoa img{
+    padding: 10px 15px 10px 15px;
+}
+
+.menuLateral .visibilidade{
+    width: 100%;
+    padding: 15px 0 15px 0;
+}
+
+.visibilidade .opcao {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.visibilidade .opcao:hover {
+    cursor: pointer;
+}
+
+.visibilidade .opcao img{
+    padding: 10px 15px 10px 20px;
+}
+
+.impedirScroll{
+    height: 100%;
+    overflow-y: hidden;
+}
+
+/*Menu Superior*/
+
+.menuSuperior{
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 20px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.menuSuperior .membros:hover{
+    cursor: pointer;
+}
+
+.conteudo{
+    background-color: #F3F3F3;
+    padding: 103px 0 80px 0;
+    height: 10000px;
+}
+
+.caixaMsg{
+    background-color: #FFFFFF;
+    height: auto;
+    width: 100% - 10px;
+    margin: 4px 0;
+    padding: 10px 0 10px 10px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 2px;
+    display: flex;
+}
+
+.caixaMsg h1{
+    color: #AAAAAA;
+    margin-right: 3px;
+}
+
+.caixaMsg h2{
+    font-weight: 700;
+    margin: 0 3px;
+}
+
+.caixaMsg h3{
+    font-weight: 400;
+}
+
+.check{
+    position: absolute;
+    right: 20px;
+    top: 0;
+}
+
+.checkEscondido{
+    display: none;
+}
+
+.entrouSaiu{
+    background-color: #DCDCDC;
+}
+
+.reservado{
+    background-color: #FFDEDE;
+}
+
+.menuInferior{
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.menuSuperior img{
+    margin: 20px;
+}
+
+.menuInferior img{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+}
+
+.menuInferior input{
+    margin: 25px;
+    font-size: 18px;
+    border: #DCDCDC;
+    font-weight: 400;
+    width: 90%;
+}
+
+.menuInferior h1{
+    position: fixed;
+    bottom: 10px;
+    left: 28px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.menuInferior textarea:focus, input:focus, select:focus{
+    border: 0 none;
+    outline: 0;
+}
+
+.botaoEnviarMsg:hover{
+    cursor: pointer;
+}
+
+strong{
+    font-weight: 700;
+}
+
+.escondido{
+    display: none;
+}
