@@ -115,6 +115,7 @@ body{
     width: 100%;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .visibilidade .opcao:hover {
@@ -186,10 +187,15 @@ body{
     position: absolute;
     right: 20px;
     top: 0;
+    display: none;
 }
 
-.checkEscondido{
-    display: none;
+.mostrarCheck{
+    display: initial;
+}
+
+.mostrarCheck2{
+    display: initial;
 }
 
 .entrouSaiu{

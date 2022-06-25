@@ -1,44 +1,58 @@
+//Depois tirar o "escondido" do telaEntrada
+
 let i=0, nomeUsuario, mensagem;
 let erroEntrada="sim";
 let paraQuem="Todos";
 let visibilidade="Público";
 
-function entrarNaSala(){
-    nomeUsuario=prompt("Qual é o seu nome?")
-    /*
-    let promise1 = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants",{name: nomeUsuario});
-    promise1.then(sucessoEntrar);
-    promise1.catch(erroEntrar);
-    */
-}
 
-function sucessoEntrar(resp){
-    alert("deu tudo certo");
-    erroEntrada="não";
-}
-
-function erroEntrar(erro){
-    alert("deu erro");
-    if (erro.status==400){
-        entrarNaSala();
-    }
-}
-
-function inputOn(){
-    /*
-    Fazer uma funcao que deixe o texto do input como 'Escreva aqui...' quando não tiver nenhuma mensagem
-    E que quando clicada fique sem nada escrito, pronto pra receber uma mensagem
-        Se tiver escrito alguma coisa e desselecionar, a mensagem se mantem
-        Se não tiver escrito nada e desselecionar, volta a aparecer 'Escreva aqui...'
-        Se tiver escrito alguma coisa e enviar, o input continua selecionado mas apaga a mensagem que foi enviada
-        Se nào tiver escrito nada e enviar, o input continua selecionado mas apaga a mensagem que foi enviada
+function entrarSessao(){
     
-    let input=document.querySelector("input")
-    if (input.value==="" && i==0){
-        alert("Selecionado");
-        i=1
+    nomeUsuario=document.querySelector(".inputNomeUsuario").value
+    const promise1 = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants",{name: nomeUsuario})
+    promise1.then(sucessoEntrar)
+    promise1.catch(erroEntrar)
+
+}
+
+function sucessoEntrar(sucessoEntrar){
+    document.querySelector(".telaEntrada").classList.add("escondido")
+}
+
+function erroEntrar(erroEntrar){
+    document.querySelector(".mensagemErroNomeUsuario").innerHTML=`<h1>O nome '${nomeUsuario}' já está em uso.</h1><h1>Por favor, digite outro nome e tente novamente.</h1>`
+    document.querySelector(".inputNomeUsuario").value=""
+}
+
+function buscarMensagens(){
+    const promessa = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages')
+    promessa.then(processarResposta)
+}
+
+//buscarMensagens();
+
+function processarResposta(resp){
+    renderizarMensagens(resp.data);
+    setTimeout(buscarMensagens,3000);
+}
+
+function renderizarMensagens(mensagens){
+    for (i==0; i<mensagens.length; i++) {
+        if (mensagens[i].type==="status"){
+            document.querySelector(".telaMensagens .conteudo").innerHTML+=`<div class="caixaMsg entrouSaiu">
+            <h1>(${mensagens[i].time})</h1><h2>${mensagens[i].from}</h2><h3>${mensagens[i].text}</h3>
+          </div>`
+        } else if (mensagens[i].type==="message"){
+            document.querySelector(".telaMensagens .conteudo").innerHTML+=`<div class="caixaMsg">
+            <h1>(${mensagens[i].time})</h1><h2>${mensagens[i].from}</h2><h3>para</h3><h2>${mensagens[i].to}:</h2><h3>${mensagens[i].text}</h3>
+          </div>`
+        } else if (mensagens[i].type==="private_message"){
+            document.querySelector(".telaMensagens .conteudo").innerHTML+=`<div class="caixaMsg reservado">
+            <h1>(${mensagens[i].time})</h1><h2>${mensagens[i].from}</h2><h3>reservadamente para</h3><h2>${mensagens[i].to}:</h2><h3>${mensagens[i].text}</h3>
+          </div>`
+        }
     }
-    */
+    console.log(mensagens)
 }
 
 function abrirFecharMenuLateral(){
@@ -46,26 +60,17 @@ function abrirFecharMenuLateral(){
 
     if (validacao.classList.contains("escondido")){
         validacao.classList.remove("escondido")
-        document.querySelector(".conteudo").classList.add(impedirScroll)
     } else {
         validacao.classList.add("escondido")
-        document.querySelector(".conteudo").classList.remove(impedirScroll)
     }
 }
 
-function entrarSessao(){
-    
-    nomeUsuario=document.querySelector(".inputNomeUsuario").value
-    if (nomeUsuario=="Luiz"){
-        //na verdade, é se der promise.then
-        document.querySelector(".telaEntrada").classList.add("escondido")
+function enviarMsgReservada(){
+    if (visibilidade==="Reservadamente"){
+        document.querySelector(".msgReservada").innerHTML=`Enviando para ${paraQuem} (reservadamente)`
     } else {
-        //na verdade, é se der promise.catch
-        document.querySelector(".inputNomeUsuario").value=""
-        document.querySelector(".mensagemErroNomeUsuario").innerHTML=`<h1>O nome de usuário já está em uso.</h1><h1>Por favor, digite outro nome e tente novamente.</h1>`
+        document.querySelector(".msgReservada").innerHTML=""
     }
-    
-
 }
 
 function enviarMsg(){
@@ -77,18 +82,25 @@ function enviarMsg(){
 
 }
 
-function enviarMsgReservada(elemento){
-    if (paraQuem!="Todos"){
-        visibilidade=elemento.innerHTML;
-        if (visibilidade=="Reservadamente"){
-            document.querySelector(".msgReservada").innerHTML=`Enviando para ${paraQuem} (reservadamente)`
-        }
+function escolherDestinatario(opcao){
+    document.querySelector(".mostrarCheck").classList.remove("mostrarCheck")
+    opcao.lastElementChild.classList.add("mostrarCheck")
+    paraQuem=(opcao.lastElementChild.previousElementSibling.innerHTML)
+    if (paraQuem=="Todos" && visibilidade==="Reservadamente"){
+        document.querySelector(".reservadamente").classList.remove("mostrarCheck2");
+        document.querySelector(".publico").classList.add("mostrarCheck2");
+        visibilidade="Público";
     }
 }
 
-function escolherRemetente(opcao){
-    
-    opcao.innerHTML=opcao.innerHTML+"<div class='check'><img src='projeto5-batepapouol/img/check.svg' height='10px'/></div>"
-    //opcao.innerHTML=opcao.innerHTML+`<div class="check"><img src="projeto5-batepapouol/img/logoUol.svg"/></div>`
+function escolherVisibilidade(opcao){
+    if (paraQuem!=="Todos"){
+        document.querySelector(".mostrarCheck2").classList.remove("mostrarCheck2")
+        opcao.lastElementChild.classList.add("mostrarCheck2")
+        visibilidade=(opcao.lastElementChild.previousElementSibling.innerHTML)
+    }
 }
 
+//Funcoes para executarem ao iniciar
+
+//buscarMensagens();
