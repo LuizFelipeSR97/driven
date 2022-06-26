@@ -51,13 +51,13 @@ function renderizarMensagens(mensagens){
     document.querySelector(".telaMensagens .conteudo").innerHTML=""
     for (i==0; i<mensagens.length; i++) {
         if (mensagens[i].type==="status"){
-            document.querySelector(".telaMensagens .conteudo").innerHTML+=`<div class="caixaMsg entrouSaiu">
-            <h1>(${mensagens[i].time})</h1><h2>${mensagens[i].from}</h2><h3>${mensagens[i].text}</h3>
-          </div>`
+            document.querySelector(".telaMensagens .conteudo").innerHTML+=`<span class="caixaMsg entrouSaiu">
+            <span class=h1>(${mensagens[i].time})</span><span class=h2>${mensagens[i].from}</span><span class=h3>${mensagens[i].text}</span>
+          </span>`
         } else if (mensagens[i].type==="message"){
-            document.querySelector(".telaMensagens .conteudo").innerHTML+=`<div class="caixaMsg">
-            <h1>(${mensagens[i].time})</h1><h2>${mensagens[i].from}</h2><h3>para</h3><h2>${mensagens[i].to}:</h2><h3>${mensagens[i].text}</h3>
-          </div>`
+            document.querySelector(".telaMensagens .conteudo").innerHTML+=`<span class="caixaMsg">
+            <span class=h1>(${mensagens[i].time})</span><span class=h2>${mensagens[i].from}</span><span class=h3>para</span><span class=h2>${mensagens[i].to}:</span><span class=h3>${mensagens[i].text}</span>
+          </span>`
         } else if (mensagens[i].type==="private_message" && (mensagens[i].to===nomeUsuario || mensagens[i].from===nomeUsuario )){
             document.querySelector(".telaMensagens .conteudo").innerHTML+=`<div class="caixaMsg reservado">
             <h1>(${mensagens[i].time})</h1><h2>${mensagens[i].from}</h2><h3>reservadamente para</h3><h2>${mensagens[i].to}:</h2><h3>${mensagens[i].text}</h3>

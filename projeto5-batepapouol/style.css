@@ -156,6 +156,8 @@ body{
     padding: 103px 0 800px 0;
     height: 600px;
     margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
 }
 
 .preencherEspaco{
@@ -171,21 +173,20 @@ body{
     font-size: 14px;
     font-weight: 400;
     border-radius: 2px;
-    display: flex;
-    word-break: break-all;
+    word-break: break-word;
 }
 
-.caixaMsg h1{
+.caixaMsg .h1{
     color: #AAAAAA;
     margin-right: 3px;
 }
 
-.caixaMsg h2{
+.caixaMsg .h2{
     font-weight: 700;
     margin: 0 3px;
 }
 
-.caixaMsg h3{
+.caixaMsg .h3{
     font-weight: 400;
 }
 
