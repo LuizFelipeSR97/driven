@@ -153,8 +153,13 @@ body{
 
 .conteudo{
     background-color: #F3F3F3;
-    padding: 103px 0 80px 0;
-    height: 10000px;
+    padding: 103px 0 800px 0;
+    height: 600px;
+    margin-bottom: 80px;
+}
+
+.preencherEspaco{
+    height: 80px;
 }
 
 .caixaMsg{
@@ -167,6 +172,7 @@ body{
     font-weight: 400;
     border-radius: 2px;
     display: flex;
+    word-break: break-all;
 }
 
 .caixaMsg h1{

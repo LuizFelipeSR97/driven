@@ -8,8 +8,8 @@
     <title>Bate Papo Uol</title>
   </head>
   <body>
-    <div class="telaEntrada escondido">
-      <img src="projeto5-batepapouol/img/logoUol.svg" height="100px"/>
+    <div class="telaEntrada">
+      <img src="./projeto5-batepapouol/img/logoUol.svg" height="100px"/>
       <input type="text" name="nome" value="" placeholder="Digite seu nome" class="inputNomeUsuario"/>
       <div class="botaoEntrar" onclick="entrarSessao()">
         Entrar
@@ -21,41 +21,36 @@
         <h1><strong>Escolha um contato</strong></h1> <h1><strong>para enviar mensagem:</strong></h1>
         <div class="paraQuem">
           <div class="pessoa" onclick="escolherDestinatario(this)">
-            <img src="projeto5-batepapouol/img/iconMembros.svg" height="15px"/>
+            <img src="./projeto5-batepapouol/img/iconMembros.svg" height="15px"/>
             <h1>Todos</h1>
-            <img src="projeto5-batepapouol/img/check.svg" height="10px" class="check mostrarCheck"/>
-          </div>
-          <div class="pessoa" onclick="escolherDestinatario(this)">
-            <img src="projeto5-batepapouol/img/iconPessoa.svg" height="20px"/>
-            <h1>Nome da Pessoa</h1>
-            <img src="projeto5-batepapouol/img/check.svg" height="10px" class="check"/>
+            <img src="./projeto5-batepapouol/img/check.svg" height="10px" class="check mostrarCheck"/>
           </div>
         </div>
         <h2><strong>Escolha a visibilidade:</strong></h2>
         <div class="visibilidade">
           <div class="opcao" onclick="escolherVisibilidade(this)">
-            <img src="projeto5-batepapouol/img/unlocked.svg" height="20px"/>
+            <img src="./projeto5-batepapouol/img/unlocked.svg" height="20px"/>
             <h1>Público</h1>
-            <img src="projeto5-batepapouol/img/check.svg" height="10px" class="check publico mostrarCheck2"/>
+            <img src="./projeto5-batepapouol/img/check.svg" height="10px" class="check publico mostrarCheck2"/>
           </div>
           <div class="opcao" onclick="escolherVisibilidade(this)">
-            <img src="projeto5-batepapouol/img/locked.svg" height="20px"/>
+            <img src="./projeto5-batepapouol/img/locked.svg" height="20px"/>
             <h1>Reservadamente</h1>
-            <img src="projeto5-batepapouol/img/check.svg" height="10px" class="check reservadamente"/>
+            <img src="./projeto5-batepapouol/img/check.svg" height="10px" class="check reservadamente"/>
           </div>
         </div>
       </div>
     </div>
     <div class="telaMensagens">
       <div class="menuSuperior">
-        <img src="projeto5-batepapouol/img/logoUol.svg"/>
-        <img src="projeto5-batepapouol/img/iconMembros.svg" height="30px" class="membros" onclick="abrirFecharMenuLateral()"/>
+        <img src="./projeto5-batepapouol/img/logoUol.svg"/>
+        <img src="./projeto5-batepapouol/img/iconMembros.svg" height="30px" class="membros" onclick="abrirFecharMenuLateral()"/>
       </div>
       <div class="conteudo">
       </div>
       <div class="menuInferior" onclick="enviarMsgReservada()">
         <input type="text" name="nome" value="" placeholder="Digite a sua mensagem..." class="textoMensagem"></input>
-        <img src="projeto5-batepapouol/img/iconMsg.svg" height="30px" class="botaoEnviarMsg" onclick="enviarMsg()"/>
+        <img src="./projeto5-batepapouol/img/iconMsg.svg" height="30px" class="botaoEnviarMsg" onclick="enviarMsg()"/>
         <h1 class="msgReservada"></h1>
       </div>
     </div>
@@ -63,5 +58,3 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="projeto5-batepapouol/script.js"></script>
 </html>
-
-onclick="enviarMsgReservada(this)"
