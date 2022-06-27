@@ -61,8 +61,6 @@ body{
     align-items: center;
 }
 
-/*Tela Lateral*/
-
 .telaLateral{
     position: fixed;
     background-color: rgba(0, 0, 0, 0.6);
@@ -131,8 +129,6 @@ body{
     overflow-y: hidden;
 }
 
-/*Menu Superior*/
-
 .menuSuperior{
     height: 80px;
     width: 100%;
@@ -153,15 +149,11 @@ body{
 
 .conteudo{
     background-color: #F3F3F3;
-    padding: 103px 0 800px 0;
+    padding: 103px 0 20px 0;
     height: 600px;
     margin-bottom: 80px;
     display: flex;
     flex-direction: column;
-}
-
-.preencherEspaco{
-    height: 80px;
 }
 
 .caixaMsg{

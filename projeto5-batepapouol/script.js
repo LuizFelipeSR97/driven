@@ -139,6 +139,6 @@ function escolherVisibilidade(opcao){
     if (paraQuem!=="Todos"){
         document.querySelector(".mostrarCheck2").classList.remove("mostrarCheck2");
         opcao.lastElementChild.classList.add("mostrarCheck2");
-        visibilidade="Reservadamente";
+        visibilidade=document.querySelector(".mostrarCheck2").parentElement.lastElementChild.previousElementSibling.innerHTML;
     }
 }
